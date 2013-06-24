@@ -8,7 +8,6 @@
 #define N 10
 
 using namespace std;
-using namespace al;
 
 int main(int argc, char *argv[])
 {
@@ -21,7 +20,7 @@ int main(int argc, char *argv[])
     }
     cout << "\nAfter heap sort: \n";
 
-    heap_sort(test, test.size() - 1);
+    al::heap_sort(test.begin(), test.end());
 
     for (vector<int>::iterator it = test.begin(); it != test.end(); it++) {
         cout << *it << " ";

@@ -1,5 +1,5 @@
-#ifndef INSERT_SORT_HPP
-#define INSERT_SORT_HPP
+#ifndef INSERT_SORT_HPP__
+#define INSERT_SORT_HPP__
 
 namespace al {
 

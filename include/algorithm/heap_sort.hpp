@@ -1,46 +1,48 @@
 #ifndef __HEAP_SORT_HPP__
 #define __HEAP_SORT_HPP__
 
-#include <vector>
-
 namespace al {
 
-static void __heap_adjust(std::vector<int>& array, int i, int size)
+template <typename __input_iterator>
+static void __heap_adjust(__input_iterator __first, __input_iterator __last, int i)
 {
+    typename std::iterator_traits<__input_iterator>::difference_type len = __last - __first;
     int lchild = 2 * i;
     int rchild = 2 * i + 1;
-    int max = i;
-    if (i <= size / 2) {
-        if (lchild <= size && array[lchild] > array[max]) {
-            max = lchild; 
+    int max_root = i;
+
+    if (i <= len / 2) {
+        if (lchild <= len && *(__first + lchild - 1) > *(__first + max_root - 1)) {
+            max_root = lchild; 
         }
-        if (rchild <= size && array[rchild] > array[max]) {
-            max = rchild; 
+        if (rchild <= len && *(__first + rchild - 1) > *(__first + max_root - 1)) {
+            max_root = rchild; 
         }
-        if (max != i) {
-            std::swap(array[i], array[max]);
-            __heap_adjust(array, max, size);
+        if (max_root != i) {
+            std::swap(*(__first + i - 1), *(__first + max_root - 1));
+            __heap_adjust(__first, __last, max_root);
         }
     }
 }
 
-static void __build_heap(std::vector<int>& array, int size)
+template <typename __input_iterator>
+static void heap_sort(__input_iterator __first, __input_iterator __last)
 {
-    for (int i = size / 2; i >= 1; i--)
-        __heap_adjust(array, i, size);
-}
+    typename std::iterator_traits<__input_iterator>::difference_type len = __last - __first;
 
-static void heap_sort(std::vector<int>& array, int size)
-{
-    __build_heap(array, size);
-    for (int i = size; i >= 1; i--) {
-        std::swap(array[1], array[i]);
-        __heap_adjust(array, 1, i - 1);
+    // build heap
+    for (int i = len / 2; i >= 1; i--)
+        __heap_adjust(__first, __last, i);
+
+    // delete max root
+    for (int i = len; i >= 1 ; i--) {
+        std::swap(*__first, *(__first + i - 1));
+        __last--;
+        __heap_adjust(__first, __last, 1);
     }
 }
 
 }
 
 #endif
-
 
