@@ -3,16 +3,16 @@
 
 int main(void)
 {
-    al::stack<int> test_in;
-    test_in.push(1);
-    test_in.push(2);
-    test_in.push(3);
-    test_in.push(4);
-    test_in.pop();
-    test_in.pop();
+    al::stack<int> test_int;
+    test_int.push(1);
+    test_int.push(2);
+    test_int.push(3);
+    test_int.push(4);
+    test_int.pop();
+    test_int.pop();
 
-    std::cout << "the top elem of stack_in:" << test_in.top() << std::endl;
-    std::cout << "the size of stack_in:" << test_in.size() << std::endl;
+    std::cout << "the top elem of stack_int:" << test_int.top() << std::endl;
+    std::cout << "the size of stack_int:" << test_int.size() << std::endl;
 
     al::stack<double> test_double;
     test_double.push(1.0);
