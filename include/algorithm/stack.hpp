@@ -10,10 +10,10 @@ template <class T>
 class stack {
 public:
     bool empty() const;
-    void push(T const&);
-    void pop();
-    T top() const;
     int size() const;
+    T top() const;
+    void push(const T&);
+    void pop();
 
 private:
     std::vector<T> elems;
@@ -26,19 +26,9 @@ bool stack<T>::empty() const
 }
 
 template <class T>
-void stack<T>::push(T const& item)
+int stack<T>::size() const
 {
-    elems.push_back(item);
-}
-
-template <class T>
-void stack<T>::pop()
-{
-    if (elems.empty()) {
-        throw std::out_of_range("stack::pop()::empty stack"); 
-    }
-
-    elems.pop_back();
+    return elems.size();
 }
 
 template <class T>
@@ -51,9 +41,19 @@ T stack<T>::top() const
 }
 
 template <class T>
-int stack<T>::size() const
+void stack<T>::push(const T& item)
 {
-    return elems.size();
+    elems.push_back(item);
+}
+
+template <class T>
+void stack<T>::pop()
+{
+    if (elems.empty()) {
+        throw std::out_of_range("stack::pop()::empty stack"); 
+    }
+
+    elems.pop_back();
 }
 
 }
