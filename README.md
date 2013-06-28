@@ -16,7 +16,8 @@ DIR TREE
 
 DONE
 ----
-
+    -Stack
+    -Queue
     -Binary Search
     -Hash Search
     -Bubble Sort
