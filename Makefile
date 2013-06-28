@@ -13,6 +13,7 @@ OBJDIR = ./obj
 BINDIR = ./bin
 
 TARGET = stack\
+		 queue\
 		 binary_search\
 	  	 hash_search\
 	  	 bubble_sort\
