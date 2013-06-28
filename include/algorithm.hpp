@@ -1,6 +1,8 @@
 #ifndef __ALGORITHM_HPP__
 #define __ALGORITHM_HPP__
 
+#include "algorithm/stack.hpp"
+
 #include "algorithm/binary_search.hpp"
 #include "algorithm/hash_search.hpp"
 

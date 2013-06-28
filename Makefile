@@ -12,7 +12,8 @@ SRCDIR = ./src
 OBJDIR = ./obj
 BINDIR = ./bin
 
-TARGET = binary_search\
+TARGET = stack\
+		 binary_search\
 	  	 hash_search\
 	  	 bubble_sort\
 	  	 heap_sort\
