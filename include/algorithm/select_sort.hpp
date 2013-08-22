@@ -1,5 +1,5 @@
-#ifndef SELECT_SORT_HPP__
-#define SELECT_SORT_HPP__
+#ifndef __SELECT_SORT_HPP__
+#define __SELECT_SORT_HPP__
 
 #include <algorithm>
 
