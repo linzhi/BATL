@@ -1,5 +1,5 @@
-#ifndef QUICK_SORT_HPP
-#define QUICK_SORT_HPP
+#ifndef __QUICK_SORT_HPP
+#define __QUICK_SORT_HPP
 
 #include <vector>
 
@@ -34,9 +34,9 @@ static int __random_adjust_array(std::vector<int>& array, int l, int r)
 {
     srand(time(NULL));
     
-    int i = rand() % (r-l+1) + l;
+    int i = rand() % (r - l + 1) + l;
     int x;
-    x= array[i];
+    x = array[i];
     std::cout << x << " | ";
     array[i] = array[l];
     array[l] = x;
