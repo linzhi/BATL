@@ -1,5 +1,5 @@
-#ifndef __QUICK_SORT_HPP
-#define __QUICK_SORT_HPP
+#ifndef __QUICK_SORT_HPP__
+#define __QUICK_SORT_HPP__
 
 #include <vector>
 
