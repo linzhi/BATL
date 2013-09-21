@@ -27,6 +27,7 @@ static int __adjust_array(std::vector<int>& array, int l, int r)
         }
     }
     array[i] = x;
+
     return i;
 }
 
@@ -35,11 +36,9 @@ static int __random_adjust_array(std::vector<int>& array, int l, int r)
     srand(time(NULL));
     
     int i = rand() % (r - l + 1) + l;
-    int x;
-    x = array[i];
-    std::cout << x << " | ";
-    array[i] = array[l];
-    array[l] = x;
+
+    std::swap(array[i], array[l]);
+
     return __adjust_array(array, l, r);
 }
 
