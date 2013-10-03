@@ -9,6 +9,7 @@
 
 #include "algorithm/bubble_sort.hpp"
 #include "algorithm/heap_sort.hpp"
+#include "algorithm/merge_sort.hpp"
 #include "algorithm/insert_sort.hpp"
 #include "algorithm/quick_sort.hpp"
 #include "algorithm/radix_sort.hpp"

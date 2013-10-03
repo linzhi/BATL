@@ -18,6 +18,7 @@ TARGET = stack\
 	  	 hash_search\
 	  	 bubble_sort\
 	  	 heap_sort\
+	  	 merge_sort\
 	  	 insert_sort\
 	  	 quick_sort\
 	  	 select_sort\
